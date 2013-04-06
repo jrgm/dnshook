@@ -15,7 +15,7 @@ be serving.
 * `npm install`
 
 * `./dnshook.js --help`:
-
+```
     Remap DNS requests for some.host.tld to use a specific ELB in an AWS region
     
     Usage: node ./dnshook.js [options]
@@ -27,6 +27,7 @@ be serving.
       --port           what port to bind                               [default: 53]
       --config-file    path/to/config.json                [default: "./config.json"]
       --logfile        path/to/logging.log                [default: "./logging.log"]
+```
 
 ## Running:
 
