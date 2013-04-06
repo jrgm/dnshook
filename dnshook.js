@@ -91,6 +91,11 @@ function configure() {
 
   configureLogging(args);
 
+  logger.info('Using configuration:');
+  [ 'real-resolver', 'port', 'config-file', 'logfile' ].forEach(function(opt) {
+    logger.info(opt, args[opt]);
+  });
+
   return args;
 }
 
