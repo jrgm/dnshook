@@ -1,0 +1,12 @@
+{
+  "domains": {
+    "hostname1.example.com": [
+      // if more than one choice, a random pick will be made
+      "something1-0404-2103070580.us-west-2.elb.amazonaws.com",
+      "something2-0404-2102070388.us-west-2.elb.amazonaws.com"
+    ],
+    "hostname2.example.com": [
+      "another-0404-2127319792.us-west-2.elb.amazonaws.com"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dnshook",
+  "version": "0.0.1",
+  "private": true,
+  "author": "John Morrison <jrgmorrison@gmail.com>",
+  "license": "MIT",
+  "description": "Remap DNS requests for some.host.tld to use a specific ELB in an AWS region",
+  "keywords": "DNS, AWS, ELB, EC2",
+  "dependencies": {
+    "cjson": ">= 0.2.1",
+    "native-dns": ">= 0.4.1",
+    "optimist": ">= 0.3.5",
+    "winston": ">= 0.6.2"
+  },
+  "main": "./dnshook.js",
+  "engines": {
+    "node": ">= 0.8.17"
+  }
+}
