@@ -43,7 +43,7 @@ be serving.
 
 ### List the available interfaces (you probably want the wireless one):
 
-    $ networksetup listallnetworkservices
+    $ networksetup -listallnetworkservices
       Ethernet
       Wi-Fi
       iPhone USB
