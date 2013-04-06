@@ -35,7 +35,7 @@ be serving.
 * change your DNS configuration to use 127.0.0.1 as the resolver. (See notes
   below on how to change this from the OSX command line).
 
-* `sudo ./dnshook [options]`. Usually the defaults are what you need.
+* `sudo ./dnshook.js [options]`. Usually the defaults are what you need.
 
 * Logging will go both to the console, and to the `--logfile`
 
