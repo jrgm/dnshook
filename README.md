@@ -14,7 +14,10 @@ be serving.
 
 * `npm install`
 
+## Running:
+
 * `./dnshook.js --help`:
+
 ```
     Remap DNS requests for some.host.tld to use a specific ELB in an AWS region
     
@@ -28,8 +31,6 @@ be serving.
       --config-file    path/to/config.json                [default: "./config.json"]
       --logfile        path/to/logging.log                [default: "./logging.log"]
 ```
-
-## Running:
 
 * change your DNS configuration to use 127.0.0.1 as the resolver. (See notes
   below on how to change this from the OSX command line).
