@@ -130,7 +130,7 @@ function configure() {
     });
 
     req.on('end', function() {
-        logger.info('request.end', req.question.name);
+      logger.info('request.end', req.question.name);
     });
 
     [ 'timeout', 'cancelled' ].forEach(function(evt) {
@@ -155,7 +155,7 @@ function configure() {
         var name = dns.consts.QTYPE_TO_NAME[ans.type];
         if (name === 'A' && interceptedDomain) {
           logger.info('request.message', 'fix intercept', interceptedDomain,
-                      'for', domain, 'ip', ans.address);
+                      ans.name, 'for', domain, 'ip', ans.address, 'ttl', ans.ttl);
           ans.name = interceptedDomain;
         }
         response.answer.push(dns[name](ans));
