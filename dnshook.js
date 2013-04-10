@@ -49,29 +49,34 @@ function configure() {
   const usage = 'Remap DNS requests for some.host.tld to use a specific ELB in an AWS region';
   const options = {
     'help': {
-      'describe': 'display this usage message'
+      'describe': 'display this usage message',
+      'alias': 'h',
     },
     'real-resolver': {
       'describe': ('what resolver to use for domains we are not intercepting, ' +
                    'or for when we need to get the real answer'),
-      'default': '8.8.8.8' // Google public DNS
+      'default': '8.8.8.8', // Google public DNS
+      'alias': 'r',
     },
     'port': {
       'describe': 'what port to bind',
-      'default': 53
+      'default': 53,
+      'alias': 'P',
     },
     'config-file': {
       'describe': 'path/to/config.json',
-      'default': './config.json'
+      'default': './config.json',
+      'alias': 'c',
     },
     'logfile': {
       'describe': 'path/to/logging.log',
-      'default': './logging.log'
+      'default': './logging.log',
+      'alias': 'l',
     },
   };
 
   var argv = optimist
-    .usage('\n' + usage + '\n\nUsage: $0 [options]')
+    .usage(usage + '\nUsage: $0 [options]')
     .options(options).wrap(80);
   var args = argv.argv;
 
