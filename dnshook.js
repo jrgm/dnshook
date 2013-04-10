@@ -42,6 +42,10 @@ function configure() {
     process.exit(1);
   }
 
+  function isWin32() {
+    return process.platform === 'win32';
+  }
+
   const usage = 'Remap DNS requests for some.host.tld to use a specific ELB in an AWS region';
   const options = {
     'help': {
@@ -76,9 +80,12 @@ function configure() {
     process.exit(0);
   }
 
-  if (args.port < 1024 && process.getuid() !== 0) {
-    console.log('Sorry, this program must be run with sudo, so it can bind to port',
-                args.port);
+  if (isWin32()) {
+    console.log('Check that you are running this as Administrator');
+    // good luck if you're not...
+  } else if (args.port < 1024 && process.getuid() !== 0) {
+    console.log('Sorry, this program must be run with sudo,',
+                'so it can bind to port', args.port);
     process.exit(0);
   }
 
@@ -162,6 +169,7 @@ function configure() {
       });
       response.send();
     });
+
     req.send();
   });
 
@@ -180,5 +188,6 @@ function configure() {
   });
 
   server.serve(args.port, '127.0.0.1');
-  logger.info('Listening on 127.0.0.1:' + args.port, 'for', Object.keys(args.domains).join(', '));
+  logger.info('Listening on 127.0.0.1:' + args.port, 'for',
+              Object.keys(args.domains).join(', '));
 })();
